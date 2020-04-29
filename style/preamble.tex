@@ -2,11 +2,12 @@
 
 % Table of contents formatting
 \renewcommand{\contentsname}{Table of Contents}
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 
 % Headers and page numbering
 \usepackage{fancyhdr}
 \pagestyle{plain}
+
 
 % Following package is used to add background image to front page
 \usepackage{wallpaper}
@@ -103,10 +104,6 @@
 % \doublespacing
 \raggedbottom
 
-% Set margins
-\usepackage[top=1.5in,bottom=1.5in,left=1.5in,right=1.4in]{geometry}
-% \setlength\parindent{0.4in} % indent at start of paragraphs (set to 0.3?)
-\setlength{\parskip}{9pt}
 
 % Add space between pararaphs
 % http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/
@@ -129,3 +126,8 @@
 
 % Don't let floats cross subsections
 % \usepackage[section,subsection]{extraplaceins}
+
+
+
+%% Make each page fill up the entire page.
+\flushbottom

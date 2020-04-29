@@ -1,3 +1,6 @@
+\pagestyle{plain}
+\pagenumbering{arabic}
+
 # Introduction, with a citation
 
 ## Background

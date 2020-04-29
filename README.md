@@ -1,3 +1,11 @@
+# Template for writing a University of Toronto SGS-specific Thesis in Markdown
+1. Edit `metadata.yaml` with your information for the title page/abstract (thesis title, thesis author name, department/faculty, graduating year).
+2. 
+
+
+=====
+_Below are the general information and instructions from Tom Pollard, the original creator of the PhD thesis markdown template_
+ 
 # Template for writing a PhD thesis in Markdown [![Build Status](https://travis-ci.org/tompollard/phd_thesis_markdown.svg?branch=master)](https://travis-ci.org/tompollard/phd_thesis_markdown)  
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.58490.svg)](http://dx.doi.org/10.5281/zenodo.58490)

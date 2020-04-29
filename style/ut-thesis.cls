@@ -1,0 +1,1 @@
+/usr/share/texlive/texmf-dist/tex/latex/ut-thesis/ut-thesis.cls

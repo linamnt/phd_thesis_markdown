@@ -7,7 +7,12 @@ OUTPUTDIR=$(BASEDIR)/output
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
 
+# CHANGE THESE to configure file paths
 BIBFILE=$(INPUTDIR)/references.bib
+REF_CSLFILE=$(STYLEDIR)/nature.csl
+METADATAFILE=$(BASEDIR)/metadata.yaml
+# lastname_firstname_middleinitial(s)_graduationyearmonth_degreedesignator_thesis.pdf
+TARGET_OUTPUT_NAME=$(OUTPUTDIR)/Last_First_M_YYYYMM_PhD_thesis
 
 help:
 	@echo ' 																	  '
@@ -26,45 +31,46 @@ help:
 
 pdf:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.pdf" \
+	-o "$(TARGET_OUTPUT_NAME).pdf" \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
-	--csl="$(STYLEDIR)/ref_format.csl" \
+	--csl="$(REF_CSLFILE)" \
+	--filter pandoc-citeproc \
+	--metadata-file="$(METADATAFILE)" \
 	--highlight-style pygments \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
-	-V documentclass=report \
 	-N \
 	--pdf-engine=xelatex \
 	--verbose
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.tex" \
+	-o "$(TARGET_OUTPUT_NAME).tex" \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" \
+	--metadata-file="$(METADATAFILE)" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
-	-V documentclass=report \
 	-N \
-	--csl="$(STYLEDIR)/ref_format.csl" \
+	--csl="$(REF_CSLFILE)" \
 	--latex-engine=xelatex
 
 docx:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.docx" \
+	-o "$(TARGET_OUTPUT_NAME).docx" \
 	--bibliography="$(BIBFILE)" \
-	--csl="$(STYLEDIR)/ref_format.csl" \
+	--csl="$(REF_CSLFILE)" \
 	--toc
 
 html:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.html" \
+	-o "$(TARGET_OUTPUT_NAME).html" \
 	--standalone \
 	--template="$(STYLEDIR)/template.html" \
 	--bibliography="$(BIBFILE)" \
-	--csl="$(STYLEDIR)/ref_format.csl" \
+	--csl="$(REF_CSLFILE)" \
 	--include-in-header="$(STYLEDIR)/style.css" \
 	--toc \
 	--number-sections

@@ -1,0 +1,12 @@
+---
+# title page
+thesis_title: "Thesis title"
+author: "First Last"
+degree: "Doctor of Philosophy"
+department: "Department/Faculty/Institute"
+gradyear: 2020
+
+# class options
+documentclass: ut-thesis
+classoption: normalmargins
+---

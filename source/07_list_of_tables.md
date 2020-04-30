@@ -1,4 +1,0 @@
-\listoftables
-
-\newpage
-

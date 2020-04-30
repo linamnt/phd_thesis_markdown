@@ -1,9 +1,39 @@
 # Template for writing a University of Toronto SGS-specific Thesis in Markdown
+
+This template is based heavily off of the [PhD Thesis Markdown](https://github.com/tompollard/phd_thesis_markdown) template by Tom Pollard, while conforming to the specific guidelines for thesis formatting at the University of Toronto, School of Graduate Studies (SGS). I've also used the [LaTeX template provided by SGS ](http://www.ctan.org/tex-archive/macros/latex/contrib/ut-thesis/) but with major modifications to allow the template to work nicely with Pandoc. 
+
+**Note, this template is NOT officially endorsed by SGS, nor do I guarantee it will be maintained to accomodate updates and changes to either the PhD Thesis Markdown template or the SGS Latex Template by their maintainers. It is provided as is and something I found useful to format my own PhD thesis in conformity with the University of Toronto, SGS guidelines. Feel free to make changes to meet your own formatting preferences.**
+
+The main changes between the original markdown template by Tom Pollard and this University of Toronto specific template are listed below: 
+- **title page** and **abstract header** is automatically populated based on the information in the `metadata.yaml` file. 
+- new **chapters** are denoted using `\chapter{Chapter Name}` instead of `#` (H1)
+  - using `#` to denote a header within a chapter will create a section (or subsection when using more than one `##`)
+  under that chapter (e.g. Chapter X, Section X.1; in the TOC as X.1)
+  - the content of each chapter (intro, results aim 1, results aim 2, Discussion etc) does not need to 
+  be contained in one file. As long as the start of chapter is denoted using `\chapter{Chapter Name}`, all subsequent sections
+  will belong to that chapter, until the next `\chapter{}` starts. 
+- `.md` **filenames/numbering are grouped** for the different parts of the thesis, such that you can more easily add new files, sections or subsections without having to change the numbering of all the other files to keep the same desired ordering:
+  - for example, instead of having the table of contents, list of figures, list of plates etc. being numbered as
+  `03_toc.md`, `04_list_of_figures.md`, `05_list_of_plates.md`, they're grouped under `03_01_toc.md`, `03_02_list_of_figures.md` etc.
+  - if you need to populate different appendixes, or lists along with the TOC, you can just add a new file, `03_XX_name_of_page.md`
+  such that xx is a number that places the page in the correct order when the pdf is generated (alphanumeric order).
+
+## Configuring your project
 1. Edit `metadata.yaml` with your information for the title page/abstract (thesis title, thesis author name, department/faculty, graduating year).
-2. 
+2. Edit the `Makefile` to change the `TARGET_OUTPUT_NAME` based on `Last_First_M_YYYYMM_DEG_thesis` where:
+    - Last = Last name
+    - First = First name
+    - M = Middle initial(s)
+    - YYYYMM = Year and month of graduation (e.g. 202011 for November 2020)
+    - DEG = Degree designator, for example, `MSc`, `MA`, `PhD`
+    - Keep `_thesis` as is. 
+3. Place your `.bib` file in the `/source` directory, and edit the `BIBFILE` entry in the `Makefile` (or the equivalent in `fabfile.py`) to match.
+4. Place your reference format file (`.csl`) in the `/style` directory and edit the `CSLFILE` entry in the `Makefile` (or the equivalent in `fabfile.py`) to match.
+ 
+**Note:** I have not tested the fabfile or Gruntfile, but have left them in the repository in case you want to modify for your own purposes. 
 
+----
 
-=====
 _Below are the general information and instructions from Tom Pollard, the original creator of the PhD thesis markdown template_
  
 # Template for writing a PhD thesis in Markdown [![Build Status](https://travis-ci.org/tompollard/phd_thesis_markdown.svg?branch=master)](https://travis-ci.org/tompollard/phd_thesis_markdown)  

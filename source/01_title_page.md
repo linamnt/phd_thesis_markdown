@@ -1,4 +1,8 @@
-<!-- This sets the page style and numbering for preliminary sections. -->
+<!-- This sets the page style and numbering (starting but not shown 
+on the titple page) for preliminary sections. -->
+
+\pagenumbering{roman}
+
 
 <!-- This generates the title page from the information given above. -->
 \maketitle
@@ -10,6 +14,4 @@
 %% following line. 
 \cleardoublepage 
 -->
-
-\pagenumbering{roman}
 

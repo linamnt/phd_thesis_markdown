@@ -1,0 +1,832 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  a4paperpaper,
+  normalmargins]{ut-thesis}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdfauthor={First Last},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+
+% Table of contents formatting
+\renewcommand{\contentsname}{Table of Contents}
+\setcounter{tocdepth}{2}
+
+% Headers and page numbering
+\usepackage{fancyhdr}
+\pagestyle{plain}
+
+% include TOC in TOC
+\usepackage{tocbibind}
+
+% Following package is used to add background image to front page
+\usepackage{wallpaper}
+
+% Table package
+\usepackage{ctable}% http://ctan.org/pkg/ctable
+
+% Deal with 'LaTeX Error: Too many unprocessed floats.'
+\usepackage{morefloats}
+% or use \extrafloats{100}
+% add some \clearpage
+
+% % Chapter header
+% \usepackage{titlesec, blindtext, color}
+% \definecolor{gray75}{gray}{0.75}
+% \newcommand{\hsp}{\hspace{20pt}}
+% \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+% % Fonts and typesetting
+% \setmainfont[Scale=1.1]{Helvetica}
+% \setsansfont[Scale=1.1]{Verdana}
+
+% FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+% \setromanfont[Scale=1.01,Ligatures={Common},Numbers={OldStyle}]{Palatino}
+% \setromanfont[Scale=1.01,Ligatures={Common},Numbers={OldStyle}]{Adobe Caslon Pro}
+%Following line controls size of code chunks
+% \setmonofont[Scale=0.9]{Monaco}
+%Following line controls size of figure legends
+% \setsansfont[Scale=1.2]{Optima Regular}
+
+% CODE BLOCKS
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+
+% JAVA CODE BLOCKS
+\definecolor{backcolour}{RGB}{242,242,242}
+\definecolor{javared}{rgb}{0.6,0,0}
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
+\definecolor{javapurple}{rgb}{0.5,0,0.35}
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
+
+\lstdefinestyle{javaCodeStyle}{
+  language=Java,                         % the language of the code
+  backgroundcolor=\color{backcolour},    % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\fontsize{10}{8}\sffamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  keywordstyle=\color{javapurple}\bfseries,
+  stringstyle=\color{javared},
+  commentstyle=\color{javagreen},
+  morecomment=[s][\color{javadocblue}]{/**}{*/},
+  captionpos=t,                          % sets the caption-position to bottom
+  frame=single,                          % adds a frame around the code
+  numbers=left,
+  numbersep=10pt,                         % margin between number and code block
+  keepspaces=true,                       % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  columns=fullflexible,
+  showspaces=false,                      % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,                % underline spaces within strings only
+  showtabs=false,                        % show tabs within strings adding particular underscores
+  tabsize=2                              % sets default tabsize to 2 spaces
+}
+
+%Attempt to set math size
+%First size must match the text size in the document or command will not work
+%\DeclareMathSizes{display size}{text size}{script size}{scriptscript size}.
+\DeclareMathSizes{12}{13}{7}{7}
+
+% ---- CUSTOM AMPERSAND
+% \newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
+
+% HEADINGS
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\scshape\large}
+\subsubsectionfont{\rmfamily\bfseries\upshape\large}
+% \sectionfont{\rmfamily\mdseries\Large}
+% \subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+% \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+
+% Set figure legends and captions to be smaller sized sans serif font
+\usepackage[font={footnotesize,sf}]{caption}
+
+\usepackage{siunitx}
+
+% Adjust spacing between lines to 1.5
+\usepackage{setspace}
+\onehalfspacing
+% \doublespacing
+\raggedbottom
+
+
+% Add space between pararaphs
+% http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/
+% \usepackage{parskip}
+% \setlength{\parskip}{\baselineskip}
+
+% Set colour of links to black so that they don't show up when printed
+\usepackage{hyperref}
+\hypersetup{colorlinks=false, linkcolor=black}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{array}
+\newcolumntype{x}[1]{%
+>{\centering\arraybackslash}m{#1}}%
+
+% Allow for long captions and float captions on opposite page of figures
+% \usepackage[rightFloats, CaptionBefore]{fltpage}
+
+% Don't let floats cross subsections
+% \usepackage[section,subsection]{extraplaceins}
+
+
+
+%% Make each page fill up the entire page.
+\flushbottom
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+
+\author{First Last}
+\date{}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\maketitle
+
+\chapter*{Abstract}
+
+\makeabstract
+
+Abstract here.
+
+\newpage
+
+\chapter*{Dedication}
+
+\begin{flushright}
+
+Dedication here.
+
+\end{flushright}
+
+\newpage
+
+\chapter*{Acknowledgements}
+
+Acknowledgements here.
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+
+\chapter*{Abbreviations}
+
+\begin{tabbing}
+\textbf{API}~~~~~~~~~~~~ \= \textbf{A}pplication \textbf{P}rogramming \textbf{I}nterface \\  
+\textbf{JSON} \> \textbf{J}ava\textbf{S}cript \textbf{O}bject \textbf{N}otation \\  
+\end{tabbing}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+
+\hypertarget{introduction-with-a-citation}{%
+\section{Introduction, with a
+citation}\label{introduction-with-a-citation}}
+
+\hypertarget{background}{%
+\subsection{Background}\label{background}}
+
+This is the introduction. Quisque finibus aliquet cursus. Integer in
+pellentesque tellus. Duis eu dignissim nulla, a porttitor enim. Quisque
+vehicula leo non ultrices finibus. Duis vehicula quis sem sit amet
+sollicitudin. Integer neque est, pharetra et auctor vel, iaculis
+interdum lectus.
+
+To include a citation to the text, just add the citation key shown in
+the references.bib file. The style of the citation is determined by the
+ref\_format.csl file. For example, in The Living Sea you can find
+pictures of the Calypso.\textsuperscript{1}
+
+In neque mauris, maximus at sapien a, iaculis dignissim justo. Aliquam
+erat volutpat. Praesent varius risus auctor est ultricies, sit amet
+consequat nisi laoreet. Suspendisse non est et mauris pharetra sagittis
+non porta justo. Praesent malesuada metus ut sapien sodales ornare.
+
+\hypertarget{the-middle-bit}{%
+\subsection{The middle bit}\label{the-middle-bit}}
+
+This is the middle bit. Phasellus quis ex in ipsum pellentesque lobortis
+tincidunt sed massa. Nullam euismod sem quis dictum condimentum.
+Suspendisse risus metus, elementum eu congue quis, viverra ac metus.
+Donec non lectus at lectus euismod laoreet pharetra semper dui. Donec
+sed eleifend erat, vel ultrices nibh. Nam scelerisque turpis ac nunc
+mollis, et rutrum nisl luctus.
+
+Duis faucibus vestibulum elit, sit amet lobortis libero. Class aptent
+taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+himenaeos. Sed at cursus nibh. Sed accumsan imperdiet interdum. Proin id
+facilisis tortor. Proin posuere a neque nec iaculis. Suspendisse
+potenti. Nullam hendrerit ante mi, vitae iaculis dui laoreet eu.
+
+Cras eleifend velit diam, eu viverra mi volutpat ut. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+finibus leo nec dui imperdiet, tincidunt ornare orci venenatis. Maecenas
+placerat efficitur est, eu blandit magna hendrerit eu.
+
+\hypertarget{subsection-of-the-middle-bit}{%
+\subsubsection{Subsection of the middle
+bit}\label{subsection-of-the-middle-bit}}
+
+This is a subsection of the middle bit. Quisque sit amet tempus arcu, ac
+suscipit ante. Cras massa elit, pellentesque eget nisl ut, malesuada
+rutrum risus. Nunc in venenatis mi. Curabitur sit amet suscipit eros,
+non tincidunt nibh. Phasellus lorem lectus, iaculis non luctus eget,
+tempus non risus. Suspendisse ut felis mi.
+
+\hypertarget{summary-of-chapters}{%
+\subsection{Summary of chapters}\label{summary-of-chapters}}
+
+This is a brief outline of what went into each chapter. \textbf{Chapter
+1} gives a background on duis tempus justo quis arcu consectetur
+sollicitudin. \textbf{Chapter 2} discusses morbi sollicitudin gravida
+tellus in maximus. \textbf{Chapter 3} discusses vestibulum eleifend
+turpis id turpis sollicitudin aliquet. \textbf{Chapter 4} shows how
+phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue
+blandit varius.
+
+\hypertarget{literature-review-with-maths}{%
+\section{Literature review, with
+maths}\label{literature-review-with-maths}}
+
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+This is the introduction. Duis in neque felis. In hac habitasse platea
+dictumst. Cras eget rutrum elit. Pellentesque tristique venenatis
+pellentesque. Cras eu dignissim quam, vel sodales felis. Vestibulum
+efficitur justo a nibh cursus eleifend. Integer ultrices lorem at nunc
+efficitur lobortis.
+
+\hypertarget{the-middle}{%
+\subsection{The middle}\label{the-middle}}
+
+This is the literature review. Nullam quam odio, volutpat ac ornare
+quis, vestibulum nec nulla. Aenean nec dapibus in
+mL/min\textsuperscript{-1}. Mathematical formula can be inserted using
+Latex:
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  \(f(x) = ax^3 + bx^2 + cx + d\)
+\end{enumerate}
+
+Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut
+sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus.
+Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper
+fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus
+laoreet ut nibh.
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+This is the conclusion. Donec pulvinar molestie urna eu faucibus. In
+tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida
+iaculis. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas.
+
+\begin{itemize}
+\tightlist
+\item
+  first item in the list
+\item
+  second item in the list
+\item
+  third item in the list
+\end{itemize}
+
+\hypertarget{first-research-study-with-code}{%
+\section{First research study, with
+code}\label{first-research-study-with-code}}
+
+\hypertarget{introduction-1}{%
+\subsection{Introduction}\label{introduction-1}}
+
+This is the introduction. Nam mollis congue tortor, sit amet convallis
+tortor mollis eget. Fusce viverra ut magna eu sagittis. Vestibulum at
+ultrices sapien, at elementum urna. Nam a blandit leo, non lobortis
+quam. Aliquam feugiat turpis vitae tincidunt ultricies. Mauris
+ullamcorper pellentesque nisl, vel molestie lorem viverra at.
+
+\hypertarget{method}{%
+\subsection{Method}\label{method}}
+
+Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum
+eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum
+est at, maximus sapien. Sed ut diam tortor.
+
+\hypertarget{subsection-1-with-example-code-block}{%
+\subsubsection{Subsection 1 with example code
+block}\label{subsection-1-with-example-code-block}}
+
+This is the first part of the methodology. Cras porta dui a dolor
+tincidunt placerat. Cras scelerisque sem et malesuada vestibulum.
+Vivamus faucibus ligula ac sodales consectetur. Aliquam vel tristique
+nisl. Aliquam erat volutpat. Pellentesque iaculis enim sit amet posuere
+facilisis. Integer egestas quam sit amet nunc maximus, id bibendum ex
+blandit.
+
+For syntax highlighting in code blocks, add three ```'' characters
+before and after a code block:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mood }\OperatorTok{=} \StringTok{\textquotesingle{}happy\textquotesingle{}}
+\ControlFlowTok{if}\NormalTok{ mood }\OperatorTok{==} \StringTok{\textquotesingle{}happy\textquotesingle{}}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"I am a happy robot"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Alternatively, you can also use LaTeX to create a code block as shown in
+the Java example below:
+
+\lstinputlisting[style=javaCodeStyle, caption=Main.java]{source/code/HelloWorld.java}
+
+If you use \texttt{javaCodeStyle} as defined in the
+\texttt{preamble.tex}, it is best to keep the maximum line length in the
+source code at 80 characters.
+
+\hypertarget{subsection-2}{%
+\subsubsection{Subsection 2}\label{subsection-2}}
+
+This is the second part of the methodology. Proin tincidunt odio non sem
+mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel
+orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget
+commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
+
+\hypertarget{results}{%
+\subsection{Results}\label{results}}
+
+These are the results. Ut accumsan tempus aliquam. Sed massa ex, egestas
+non libero id, imperdiet scelerisque augue. Duis rutrum ultrices arcu et
+ultricies. Proin vel elit eu magna mattis vehicula. Sed ex erat,
+fringilla vel feugiat ut, fringilla non diam.
+
+\hypertarget{discussion}{%
+\subsection{Discussion}\label{discussion}}
+
+This is the discussion. Duis ultrices tempor sem vitae convallis.
+Pellentesque lobortis risus ac nisi varius bibendum. Phasellus volutpat
+aliquam varius. Mauris vitae neque quis libero volutpat finibus. Nunc
+diam metus, imperdiet vitae leo sed, varius posuere orci.
+
+\hypertarget{conclusion-1}{%
+\subsection{Conclusion}\label{conclusion-1}}
+
+This is the conclusion to the chapter. Praesent bibendum urna orci, a
+venenatis tellus venenatis at. Etiam ornare, est sed lacinia elementum,
+lectus diam tempor leo, sit amet elementum ex elit id ex. Ut ac viverra
+turpis. Quisque in nisl auctor, ornare dui ac, consequat tellus.
+
+\hypertarget{research-containing-a-figure}{%
+\section{Research containing a
+figure}\label{research-containing-a-figure}}
+
+\hypertarget{introduction-2}{%
+\subsection{Introduction}\label{introduction-2}}
+
+This is the introduction. Sed vulputate tortor at nisl blandit interdum.
+Cras sagittis massa ex, quis eleifend purus condimentum congue. Maecenas
+tristique, justo vitae efficitur mollis, mi nulla varius elit, in
+consequat ligula nulla ut augue. Phasellus diam sapien, placerat sit
+amet tempor non, lobortis tempus ante.
+
+\hypertarget{method-1}{%
+\subsection{Method}\label{method-1}}
+
+Donec imperdiet, lectus vestibulum sagittis tempus, turpis dolor euismod
+justo, vel tempus neque libero sit amet tortor. Nam cursus commodo
+tincidunt.
+
+\hypertarget{subsection-1}{%
+\subsubsection{Subsection 1}\label{subsection-1}}
+
+This is the first part of the methodology. Duis tempor sapien sed tellus
+ultrices blandit. Sed porta mauris tortor, eu vulputate arcu dapibus ac.
+Curabitur sodales at felis efficitur sollicitudin. Quisque at neque
+sollicitudin, mollis arcu vitae, faucibus tellus.
+
+\hypertarget{subsection-2-1}{%
+\subsubsection{Subsection 2}\label{subsection-2-1}}
+
+This is the second part of the methodology. Sed ut ipsum ultrices,
+interdum ipsum vel, lobortis diam. Curabitur sit amet massa quis tortor
+molestie dapibus a at libero. Mauris mollis magna quis ante vulputate
+consequat. Integer leo turpis, suscipit ac venenatis pellentesque,
+efficitur non sem. Pellentesque eget vulputate turpis. Etiam id nibh at
+elit fermentum interdum.
+
+\hypertarget{results-1}{%
+\subsection{Results}\label{results-1}}
+
+These are the results. In vitae odio at libero elementum fermentum vel
+iaculis enim. Nullam finibus sapien in congue condimentum. Curabitur et
+ligula et ipsum mollis fringilla.
+
+\hypertarget{discussion-1}{%
+\subsection{Discussion}\label{discussion-1}}
+
+Figure \ref{ref_a_figure} shows how to add a figure. Donec ut lacinia
+nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio
+nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor
+laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque
+habitant morbi tristique senectus et netus et malesuada fames ac turpis
+egestas.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{source/figures/example_figure.pdf}
+\caption{RV Calypso is a former British Royal Navy minesweeper converted
+into a research vessel for the oceanographic researcher Jacques-Yves
+Cousteau. It was equipped with a mobile laboratory for underwater field
+research. \label{ref_a_figure}}
+\end{figure}
+
+\hypertarget{conclusion-2}{%
+\subsection{Conclusion}\label{conclusion-2}}
+
+This is the conclusion to the chapter. Quisque nec purus a quam
+consectetur volutpat. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus. In lorem justo, convallis
+quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus.
+Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus
+lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in
+faucibus.
+
+\hypertarget{research-containing-a-table}{%
+\section{Research containing a
+table}\label{research-containing-a-table}}
+
+\hypertarget{introduction-3}{%
+\subsection{Introduction}\label{introduction-3}}
+
+This is the introduction. Phasellus non purus id mauris aliquam rutrum
+vitae quis tellus. Maecenas rhoncus ligula nulla, fringilla placerat mi
+consectetur eu. Aenean nec metus ac est ornare posuere. Nunc ipsum
+lacus, gravida commodo turpis quis, rutrum eleifend erat. Pellentesque
+id lorem eget ante porta tincidunt nec nec tellus.
+
+\hypertarget{method-2}{%
+\subsection{Method}\label{method-2}}
+
+Vivamus consectetur, velit in congue lobortis, massa massa lacinia urna,
+sollicitudin semper ipsum augue quis tortor. Donec quis nisl at arcu
+volutpat ultrices. Maecenas ex nibh, consequat ac blandit sit amet,
+molestie in odio. Morbi finibus libero et nisl dignissim, at ultricies
+ligula pulvinar.
+
+\hypertarget{subsection-1-1}{%
+\subsubsection{Subsection 1}\label{subsection-1-1}}
+
+This is the first part of the methodology. Integer leo erat, commodo in
+lacus vel, egestas varius elit. Nulla eget magna quam. Nullam
+sollicitudin dolor ut ipsum varius tincidunt. Duis dignissim massa in
+ipsum accumsan imperdiet. Maecenas suscipit sapien sed dui pharetra
+blandit. Morbi fermentum est vel quam pretium maximus.
+
+\hypertarget{subsection-2-2}{%
+\subsubsection{Subsection 2}\label{subsection-2-2}}
+
+This is the second part of the methodology. Nullam accumsan condimentum
+eros eu volutpat. Maecenas quis ligula tempor, interdum ante sit amet,
+aliquet sem. Fusce tellus massa, blandit id tempus at, cursus in tortor.
+Nunc nec volutpat ante. Phasellus dignissim ut lectus quis porta. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit.
+
+\hypertarget{results-2}{%
+\subsection{Results}\label{results-2}}
+
+Table \ref{ref_a_table} shows us how to add a table. Integer tincidunt
+sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis
+fringilla, sapien eros aliquet orci, vitae pretium massa neque eu
+turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex
+sodales laoreet.
+
+\newpage
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{This is the table caption. Suspendisse blandit dolor sed tellus
+venenatis, venenatis fringilla turpis pretium.
+\label{ref_a_table}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.25\columnwidth}\raggedright
+Column 1\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+Column 2\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+Column 3\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.25\columnwidth}\raggedright
+Column 1\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+Column 2\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
+Column 3\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Row 1\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+0.1\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+0.2\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Row 2\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+0.3\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+0.3\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Row 3\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+0.4\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+0.4\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Row 4\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+0.5\strut
+\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
+0.6\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{discussion-2}{%
+\subsection{Discussion}\label{discussion-2}}
+
+This is the discussion. Etiam sit amet mi eros. Donec vel nisi sed purus
+gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo
+maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium
+mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula
+non mauris volutpat fermentum quis vitae sapien.
+
+\hypertarget{conclusion-3}{%
+\subsection{Conclusion}\label{conclusion-3}}
+
+This is the conclusion to the chapter. Nullam porta tortor id vehicula
+interdum. Quisque pharetra, neque ut accumsan suscipit, orci orci
+commodo tortor, ac finibus est turpis eget justo. Cras sodales nibh nec
+mauris laoreet iaculis. Morbi volutpat orci felis, id condimentum nulla
+suscipit eu. Fusce in turpis quis ligula tempus scelerisque eget quis
+odio. Vestibulum et dolor id erat lobortis ullamcorper quis at sem.
+
+\hypertarget{final-research-study}{%
+\section{Final research study}\label{final-research-study}}
+
+\hypertarget{introduction-4}{%
+\subsection{Introduction}\label{introduction-4}}
+
+This is the introduction. Nunc lorem odio, laoreet eu turpis at,
+condimentum sagittis diam. Phasellus metus ligula, auctor ac nunc vel,
+molestie mattis libero. Praesent id posuere ex, vel efficitur nibh.
+Quisque vestibulum accumsan lacus vitae mattis.
+
+\hypertarget{method-3}{%
+\subsection{Method}\label{method-3}}
+
+In tincidunt viverra dolor, ac pharetra tellus faucibus eget.
+Pellentesque tempor a enim nec venenatis. Morbi blandit magna imperdiet
+posuere auctor. Maecenas in maximus est.
+
+\hypertarget{subsection-1-2}{%
+\subsubsection{Subsection 1}\label{subsection-1-2}}
+
+This is the first part of the methodology. Praesent mollis sem diam, sit
+amet tristique lacus vulputate quis. Vivamus rhoncus est rhoncus tellus
+lacinia, a interdum sem egestas. Curabitur quis urna vel quam blandit
+semper vitae a leo. Nam vel lectus lectus.
+
+\hypertarget{subsection-2-3}{%
+\subsubsection{Subsection 2}\label{subsection-2-3}}
+
+This is the second part of the methodology. Aenean vel pretium tortor.
+Aliquam erat volutpat. Quisque quis lobortis mi. Nulla turpis leo,
+ultrices nec nulla non, ullamcorper laoreet risus.
+
+\hypertarget{results-3}{%
+\subsection{Results}\label{results-3}}
+
+These are the results. Curabitur vulputate nisl non ante tincidunt
+tempor. Aenean porta nisi quam, sed ornare urna congue sed. Curabitur in
+sapien justo. Quisque pulvinar ullamcorper metus, eu varius mauris
+pellentesque et. In hac habitasse platea dictumst. Pellentesque nec
+porttitor libero. Duis et magna a massa lacinia cursus.
+
+\hypertarget{discussion-3}{%
+\subsection{Discussion}\label{discussion-3}}
+
+This is the discussion. Curabitur gravida nisl id gravida congue. Duis
+est nisi, sagittis eget accumsan ullamcorper, semper quis turpis. Mauris
+ultricies diam metus, sollicitudin ultricies turpis lobortis vitae. Ut
+egestas vehicula enim, porta molestie neque consectetur placerat.
+Integer iaculis sapien dolor, non porta nibh condimentum ut.
+
+\hypertarget{conclusion-4}{%
+\subsection{Conclusion}\label{conclusion-4}}
+
+This is the conclusion to the chapter. Nulla sed condimentum lectus.
+Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id
+vestibulum sapien. Cum sociis natoque penatibus et magnis dis parturient
+montes, nascetur ridiculus mus.
+
+\hypertarget{conclusion-5}{%
+\section{Conclusion}\label{conclusion-5}}
+
+\hypertarget{thesis-summary}{%
+\subsection{Thesis summary}\label{thesis-summary}}
+
+In summary, pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Nunc eleifend, ex a luctus porttitor,
+felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla
+blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet
+egestas leo sollicitudin at.
+
+\hypertarget{future-work}{%
+\subsection{Future work}\label{future-work}}
+
+There are several potential directions for extending this thesis. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit. Aliquam gravida ipsum
+at tempor tincidunt. Aliquam ligula nisl, blandit et dui eu, eleifend
+tempus nibh. Nullam eleifend sapien eget ante hendrerit commodo.
+Pellentesque pharetra erat sit amet dapibus scelerisque.
+
+Vestibulum suscipit tellus risus, faucibus vulputate orci lobortis eget.
+Nunc varius sem nisi. Nunc tempor magna sapien, euismod blandit elit
+pharetra sed. In dapibus magna convallis lectus sodales, a consequat sem
+euismod. Curabitur in interdum purus. Integer ultrices laoreet aliquet.
+Nulla vel dapibus urna. Nunc efficitur erat ac nisi auctor sodales.
+
+\hypertarget{appendix-1-some-extra-stuff}{%
+\section*{Appendix 1: Some extra
+stuff}\label{appendix-1-some-extra-stuff}}
+\addcontentsline{toc}{section}{Appendix 1: Some extra stuff}
+
+Add appendix 1 here. Vivamus hendrerit rhoncus interdum. Sed ullamcorper
+et augue at porta. Suspendisse facilisis imperdiet urna, eu pellentesque
+purus suscipit in. Integer dignissim mattis ex aliquam blandit.
+Curabitur lobortis quam varius turpis ultrices egestas.
+
+\hypertarget{appendix-2-some-more-extra-stuff}{%
+\section*{Appendix 2: Some more extra
+stuff}\label{appendix-2-some-more-extra-stuff}}
+\addcontentsline{toc}{section}{Appendix 2: Some more extra stuff}
+
+Add appendix 2 here. Aliquam rhoncus mauris ac neque imperdiet, in
+mattis eros aliquam. Etiam sed massa et risus posuere rutrum vel et
+mauris. Integer id mauris sed arcu venenatis finibus. Etiam nec
+hendrerit purus, sed cursus nunc. Pellentesque ac luctus magna. Aenean
+non posuere enim, nec hendrerit lacus. Etiam lacinia facilisis tempor.
+Aenean dictum nunc id felis rhoncus aliquam.
+
+\footnotesize
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{cslreferences}
+\leavevmode\hypertarget{ref-Cousteau1963}{}%
+1. Cousteau Jacques \& Dugan James. \emph{The Living Sea: by
+Jacques-Yves Cousteau}. 1--212 (Hamish Hamilton, 1963).
+\end{cslreferences}
+
+\end{document}

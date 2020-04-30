@@ -9,10 +9,10 @@ STYLEDIR=$(BASEDIR)/style
 
 # CHANGE THESE to configure file paths
 BIBFILE=$(INPUTDIR)/references.bib
-REF_CSLFILE=$(STYLEDIR)/nature.csl
+CSLFILE=$(STYLEDIR)/ref_format.csl
 METADATAFILE=$(BASEDIR)/metadata.yaml
 # lastname_firstname_middleinitial(s)_graduationyearmonth_degreedesignator_thesis.pdf
-TARGET_OUTPUT_NAME=$(OUTPUTDIR)/Last_First_M_YYYYMM_PhD_thesis
+TARGET_OUTPUT_NAME=$(OUTPUTDIR)/Last_First_M_YYYYMM_DEG_thesis
 
 help:
 	@echo ' 																	  '
@@ -35,7 +35,7 @@ pdf:
 	-H "$(STYLEDIR)/preamble.tex" \
 	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
-	--csl="$(REF_CSLFILE)" \
+	--csl="$(CSLFILE)" \
 	--filter pandoc-citeproc \
 	--metadata-file="$(METADATAFILE)" \
 	--highlight-style pygments \
@@ -54,14 +54,14 @@ tex:
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-N \
-	--csl="$(REF_CSLFILE)" \
-	--latex-engine=xelatex
+	--csl="$(CSLFILE)" \
+	--pdf-engine=xelatex
 
 docx:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(TARGET_OUTPUT_NAME).docx" \
 	--bibliography="$(BIBFILE)" \
-	--csl="$(REF_CSLFILE)" \
+	--csl="$(CSLFILE)" \
 	--toc
 
 html:
@@ -70,7 +70,7 @@ html:
 	--standalone \
 	--template="$(STYLEDIR)/template.html" \
 	--bibliography="$(BIBFILE)" \
-	--csl="$(REF_CSLFILE)" \
+	--csl="$(CSLFILE)" \
 	--include-in-header="$(STYLEDIR)/style.css" \
 	--toc \
 	--number-sections

@@ -18,8 +18,12 @@ The main changes between the original markdown template by Tom Pollard and this 
   - if you need to populate different appendixes, or lists along with the TOC, you can just add a new file, `03_XX_name_of_page.md`
   such that xx is a number that places the page in the correct order when the pdf is generated (alphanumeric order).
 
+
 ## Configuring your project
 1. Edit `metadata.yaml` with your information for the title page/abstract (thesis title, thesis author name, department/faculty, graduating year).
+    - You can also specify any document class options here. For example, any of the standard options available 
+    for the LaTeX2e `report` class (e.g. 10pt, 12pt, oneside, twoside etc.), or those specifically available for the 
+    `ut-thesis` class. You can see `ut-thesis.cls` for more detailed information. 
 2. Edit the `Makefile` to change the `TARGET_OUTPUT_NAME` based on `Last_First_M_YYYYMM_DEG_thesis` where:
     - Last = Last name
     - First = First name

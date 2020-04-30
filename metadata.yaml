@@ -6,7 +6,13 @@ degree: "Doctor of Philosophy"
 department: "Department/Faculty/Institute"
 gradyear: 2020
 
-# class options
+# set any class options available from ut-thesis.cls/report class
 documentclass: ut-thesis
-classoption: normalmargins
+# common examples are included below
+classoption: 
+  - narrowmargins
+#  - 10pt               # fontsize
+#  - twoside            # doublesided
+#  - doublespaced       # double-line spacing (default is single)
+#  - draft              # Produce a draft copy (double-sided, double-spaced, normal margins, figures not loaded, with the word "DRAFT" printed at all four cornersof every page)
 ---

@@ -32,7 +32,7 @@ The main changes between the original markdown template by Tom Pollard and this 
     - DEG = Degree designator, for example, `MSc`, `MA`, `PhD`
     - Keep `_thesis` as is. 
 3. Place your `.bib` file in the `/source` directory, and edit the `BIBFILE` entry in the `Makefile` (or the equivalent in `fabfile.py`) to match.
-4. Place your reference format file (`.csl`) in the `/style` directory and edit the `CSLFILE` entry in the `Makefile` (or the equivalent in `fabfile.py`) to match.
+4. Place your reference format file (`.csl`) in the `/style` directory and edit the `CSLFILE` entry in the `Makefile` (or the equivalent in `fabfile.py`) to match (Optional). *A default file, `ref_format.csl`, has been provided in the `/style` directory.*
  
 **Note:** I have not tested the fabfile or Gruntfile, but have left them in the repository in case you want to modify for your own purposes. 
 

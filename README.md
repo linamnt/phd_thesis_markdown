@@ -41,7 +41,7 @@ The structure of the sections/chapters included (Intro, Lit Review, Methods etc)
 - Instead of a separate sections for Introduction and Literature Review, your Introduction is essentially your literature review.
 - some people choose to include one Methods section that covers all methods used in the thesis, while others will include methods within each results chapter, or some combination of both (general methods at the start, and more specific methods in each results chapter)
 - the number of results chapters varies by department/field, so check through theses from alumni of your research group, or department to get an idea 
-- Instead of having longer Discussion section, some people include a Discussion section within each results chapter, and spend more time in the Discussion/Conclusions section focusing on future directions, or more broad speculations about the results in terms of the current literature and state of the field. 
+- You can only report the results in each Results Chapter and have a longer Discussion section, or some people include a Discussion section within each results chapter, and spend more time in the Discussion/Conclusions section focusing on future directions, or more broad speculations about the results in terms of the current literature and state of the field. 
 
 **Regardless, always consult the SGS Guidelines ([General Info](https://www.sgs.utoronto.ca/academic-progress/program-completion/producing-your-thesis/), [Formatting](https://www.sgs.utoronto.ca/academic-progress/program-completion/formatting/)) to make sure your thesis meets all the up-to-date criteria for a thesis.**
 

@@ -1,4 +1,6 @@
-# Appendix 2: Some more extra stuff {.unnumbered}
+\chapter*{Appendix 2}
+\addcontentsline{toc}{chapter}{Appendix 2}
+
 
 <!-- 
 This could include extra figures or raw data

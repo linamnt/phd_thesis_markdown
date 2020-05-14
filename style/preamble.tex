@@ -20,14 +20,14 @@
 % or use \extrafloats{100}
 % add some \clearpage
 
-% % Chapter header
+%% Chapter header
 \usepackage{titlesec, blindtext, color}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{10pt}}
 \titleformat{\chapter}[display]
-% % Number, Grayed line, then the chapter name
-%{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
-% % Chapter Number, then the chapter name
+%% Option 1: Number, Grayed line, then the chapter name 
+% {\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+%% Option 2:Chapter Number, then the chapter name
 {\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{10pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{10pt}{10pt}
 

@@ -3,7 +3,8 @@
 <!--
 After the introductory chapter, it seems fairly common to 
 include a chapter that reviews the literature and 
-introduces methodology used throughout the thesis.
+introduces methodology used throughout the thesis. 
+Or it can be merged as part of your introduction. 
 -->
 
 # Introduction

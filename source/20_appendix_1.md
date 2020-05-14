@@ -1,4 +1,6 @@
-# Appendix 1: Some extra stuff {.unnumbered}
+\chapter*{Appendix 1: Some extra stuff}
+\addcontentsline{toc}{chapter}{Appendix 1: Some extra stuff}
+
 
 <!-- 
 This could be a list of papers by the author for example 

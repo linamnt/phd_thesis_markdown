@@ -42,10 +42,10 @@ The main changes between the original markdown template by Tom Pollard and this 
 
 ## Writing 
 The structure of the sections/chapters included (Intro, Lit Review, Methods etc) are only meant to be a guide. You can discuss with your supervisor(s) or registrar for more information if you're unsure. Here are just some examples of differences in structure I've seen looking through other University of Toronto theses (which you can do too [T-Space Theses Repository](https://tspace.library.utoronto.ca/handle/1807/9944)), I would highly suggest looking through some theses from your field/department, as certain formats may be more common/expected in different fields.
-- Instead of a separate sections for Introduction and Literature Review, your Introduction is essentially your literature review.
-- some people choose to include one Methods section that covers all methods used in the thesis, while others will include methods within each results chapter, or some combination of both (general methods at the start, and more specific methods in each results chapter)
+- Introduction + Literature Review as two separate sections OR your Introduction includes your literature review (one section total)
+- One methods section that covers all methods used in the thesis OR include chapter-specific methods within each results chapter OR some combination of both (general methods at the start, and more specific methods in each results chapter)
 - the number of results chapters varies by department/field, so check through theses from alumni of your research group, or department to get an idea 
-- You can only report the results in each Results Chapter and have a longer Discussion section, or some people include a Discussion section within each results chapter, and spend more time in the Discussion/Conclusions section focusing on future directions, or more broad speculations about the results in terms of the current literature and state of the field. 
+- Only report results in each Results Chapter and have a longer Discussion chapter, Future Directions/Conclusions chapter, OR include a final discussion section  within each results chapter, and spend more time in the Discussion/Conclusions section focusing on future directions, or more broad interpretations/discussions of the results. 
 
 **Regardless, always consult the SGS Guidelines ([General Info](https://www.sgs.utoronto.ca/academic-progress/program-completion/producing-your-thesis/), [Formatting](https://www.sgs.utoronto.ca/academic-progress/program-completion/formatting/)) to make sure your thesis meets all the up-to-date criteria for a thesis.**
 
@@ -122,7 +122,7 @@ There are some minor annoyances:
     sudo tlmgr update l3experimental
     ```
     
-5. Edit the files in the 'source' directory, then goto step 4.  
+5. Edit the files in the 'source' directory, then go to step 4.  
 
 ## What else do I need to know?
 

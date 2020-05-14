@@ -1,6 +1,8 @@
 # Template for writing a University of Toronto SGS-specific Thesis in Markdown
 
-This markdown template is based heavily off of the [PhD Thesis Markdown](https://github.com/tompollard/phd_thesis_markdown) template by Tom Pollard which uses [Pandoc](https://pandoc.org/) for the conversion, while conforming to the specific guidelines for thesis formatting at the University of Toronto, School of Graduate Studies (SGS). I've also used the [LaTeX template provided by SGS ](http://www.ctan.org/tex-archive/macros/latex/contrib/ut-thesis/) but with modifications to allow the template to work nicely with Pandoc. 
+This markdown template is based heavily off of the [PhD Thesis Markdown](https://github.com/tompollard/phd_thesis_markdown) template by Tom Pollard which uses [Pandoc](https://pandoc.org/) for the conversion, while conforming to the specific guidelines for thesis formatting at the University of Toronto, School of Graduate Studies (SGS) ([General Info](https://www.sgs.utoronto.ca/academic-progress/program-completion/producing-your-thesis/), [Formatting](https://www.sgs.utoronto.ca/academic-progress/program-completion/formatting/)). 
+
+I've also used the [LaTeX template provided by Prof. Francois Pitt for SGS ](http://www.ctan.org/tex-archive/macros/latex/contrib/ut-thesis/) but with modifications to allow the template to work nicely with Pandoc. 
 
 If you're on the fence whether this is right for you, I also want to highlight this section in the original README below on **[why you should use Markdown to write your thesis](https://github.com/linamnt/utoronto_thesis_markdown/blob/master/README.md#why-write-my-thesis-in-markdown).**
 

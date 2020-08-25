@@ -31,7 +31,7 @@ The main changes between the original markdown template by Tom Pollard and this 
 2. Edit the `Makefile` to change the `TARGET_OUTPUT_NAME` based on `Last_First_M_YYYYMM_DEG_thesis` where:
     - Last = Last name
     - First = First name
-    - M = Middle initial(s)
+    - M = Middle initial(s) (optional)
     - YYYYMM = Year and month of graduation (e.g. 202011 for November 2020)
     - DEG = Degree designator, for example, `MSc`, `MA`, `PhD`
     - Keep `_thesis` as is. 

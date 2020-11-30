@@ -114,6 +114,7 @@
 % http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/
 % \usepackage{parskip}
 % \setlength{\parskip}{\baselineskip}
+\setlength{\parskip}{1cm plus3mm minus3mm}
 
 % Set colour of links to black so that they don't show up when printed
 \usepackage{hyperref}
@@ -130,9 +131,8 @@
 % \usepackage[rightFloats, CaptionBefore]{fltpage}
 
 % Don't let floats cross subsections
-% \usepackage[section,subsection]{extraplaceins}
-
+\usepackage[section,subsection]{extraplaceins}
 
 
 %% Make each page fill up the entire page.
-\flushbottom
+\raggedbottom
